@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend # Adjust this path to your backend directory
+    ports:
+      - "5000:5000" # Map backend port
+
+  frontend:
+    build:
+      context: ./frontend # Adjust this path to your frontend directory
+    ports:
+      - "3000:3000" # Map frontend port
+    depends_on:
+      - backend # Ensure the backend starts first
